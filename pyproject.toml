@@ -1,0 +1,11 @@
+[project]
+name = "sql-lab1-de25"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.4.3",
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+]
