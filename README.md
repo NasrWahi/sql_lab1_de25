@@ -25,7 +25,7 @@ This lab has SQL and Duckdb analysis, working with DVD rental data
 Original Sakila sample database from Kaggle: https://www.kaggle.com/datasets/atanaskanev/sqlite-sakila-sample-database
 
 # Examples
-```pyth
+```python
 import duckdb
 
 # Connect to database
@@ -33,20 +33,20 @@ duckdb_path = "data/sakila.duckdb"
 
 # Example: Task 1a | Movies longer than 3 hours
 task1a = duckdb.sql(
-    """
+    ---
     SELECT title, length
     FROM film
     WHERE length > 180
-    """
+    ---
 ).df()
 
 print("=== Task 1a: Movies longer than 3 hours ===")
 print(f"Found {len(task1a)} movies")
 task1a.head(10)
 
-# Example: Task 2a | Top 5 customers by total spend
+# Example: Task 2a | Top 5 customers by total_spend
 task2a = duckdb.sql(
-    """
+    ---
     SELECT 
         c.customer_id,
         c.first_name || ' ' || c.last_name as customer_name,
@@ -56,9 +56,7 @@ task2a = duckdb.sql(
     GROUP BY c.customer_id, c.first_name, c.last_name
     ORDER BY total_spend DESC
     LIMIT 5
-    """
+    ---
 ).df()
 
 task2a
-
----
